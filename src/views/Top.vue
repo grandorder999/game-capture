@@ -4,19 +4,47 @@
       <div>
         <nav>
           <h2 class="subtitle">みんなで使おう！掲示板コーナー</h2>
-          <div>フレンド募集はこちらから</div>
-          <button type="button" v-on:click="moveToBbs1">ここをクリック</button>
-          <div>ガチャ報告はこちらから</div>
-          <button type="button" v-on:click="moveToBbs2">ここをクリック</button>
+          <div class="friend">
+            <div>フレンド募集はこちらから</div>
+            <button type="button" v-on:click="moveToBbs1">
+              ここをクリック
+            </button>
+          </div>
+          <div class="report">
+            <div>ガチャ報告はこちらから</div>
+            <button type="button" v-on:click="moveToBbs2">
+              ここをクリック
+            </button>
+          </div>
+          <div class="questionnaire">
+            <div>アンケートはこちらから</div>
+            <button type="button" v-on:click="moveToQuestionnaire">
+              ここをクリック
+            </button>
+          </div>
         </nav>
       </div>
     </aside>
 
     <article class="article">
-      <h2>現在のイベント攻略</h2>
-      <button type="button" v-on:click="moveToEventCapture">
-        ここをクリック
-      </button>
+      <div class="event">
+        <h2>現在のイベント攻略</h2>
+        <button type="button" v-on:click="moveToEventCapture">
+          ここをクリック
+        </button>
+      </div>
+      <div class="checker">
+        <h2>所持サーヴァントチェッカー</h2>
+        <button type="button" v-on:click="moveToCheckPage">
+          ここをクリック
+        </button>
+      </div>
+      <div class="calc">
+        <h2>宝具威力計算ツール</h2>
+        <button type="button" v-on:click="moveToCalcTreasure">
+          ここをクリック
+        </button>
+      </div>
     </article>
   </div>
 </template>
@@ -33,6 +61,15 @@ export default class XXXComponent extends Vue {
   }
   moveToEventCapture(): void {
     this.$router.push("/eventCapture");
+  }
+  moveToQuestionnaire(): void {
+    this.$router.push("/questionnaire");
+  }
+  moveToCheckPage(): void {
+    this.$router.push("/checkPage");
+  }
+  moveToCalcTreasure(): void {
+    this.$router.push("/calcTreasurePage");
   }
 }
 </script>

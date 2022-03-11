@@ -20,6 +20,18 @@ const routes: Array<RouteConfig> = [
     path: "/eventCapture",
     component: () => import("../views/EventCapture.vue"),
   },
+  {
+    path: "/questionnaire",
+    component: () => import("../views/Questionnaire.vue"),
+  },
+  {
+    path: "/checkPage",
+    component: () => import("../views/CheckPage.vue"),
+  },
+  {
+    path: "/calcTreasurePage",
+    component: () => import("../views/CalcTreasurePage.vue"),
+  },
 ];
 
 const router = new VueRouter({
