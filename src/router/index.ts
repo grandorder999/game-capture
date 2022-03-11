@@ -5,8 +5,8 @@ Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
-    path: "/test",
-    component: () => import("../views/Test.vue"),
+    path: "/top",
+    component: () => import("../views/Top.vue"),
   },
 ];
 

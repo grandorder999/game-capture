@@ -1,7 +1,5 @@
 <template>
-  <div class="container">
-    <h1>ゲーム攻略サイト</h1>
-  </div>
+  <div></div>
 </template>
 
 <script lang="ts">
