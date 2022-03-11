@@ -95,5 +95,16 @@ export default class XXXComponent extends Vue {
 }
 .container {
   display: flex;
+  justify-content: center;
+}
+.friend,
+.report,
+.questionnaire,
+.event,
+.checker,
+.calc,
+.pickup,
+.twitter {
+  border: solid 1px black;
 }
 </style>
