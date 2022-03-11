@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="footer">
     <img src="/img/image0.jpeg" alt="#" />
   </div>
 </template>
@@ -11,6 +11,9 @@ export default class Footer extends Vue {}
 </script>
 
 <style scoped>
+.footer {
+  margin-top: 20px;
+}
 img {
   width: 10%;
   padding-left: 630px;

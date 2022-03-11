@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>ゲーム攻略サイト</h1>
+  <div class="header">
+    <router-link to="/"> <img src="/img/image2.jpeg" alt="#" /> </router-link>
   </div>
 </template>
 
@@ -11,7 +11,11 @@ export default class Header extends Vue {}
 </script>
 
 <style scoped>
-h1 {
-  text-align: center;
+.header {
+  margin-bottom: 20px;
+}
+img {
+  width: 30%;
+  padding-left: 500px;
 }
 </style>

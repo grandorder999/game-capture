@@ -3,7 +3,8 @@
     <aside class="left-menu">
       <div>
         <nav>
-          <h2 class="subtitle">みんなで使おう！掲示板コーナー</h2>
+          <div class="subtitle">みんなで使おう！</div>
+          <div class="subtitle">掲示板コーナー</div>
           <div class="friend">
             <div>フレンド募集はこちらから</div>
             <button type="button" v-on:click="moveToBbs1">
@@ -106,5 +107,9 @@ export default class XXXComponent extends Vue {
 .pickup,
 .twitter {
   border: solid 1px black;
+  background-color: white;
+}
+.subtitle {
+  font-weight: bold;
 }
 </style>
