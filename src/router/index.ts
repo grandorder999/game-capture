@@ -5,8 +5,20 @@ Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
-    path: "/*",
+    path: "/",
     component: () => import("../views/Top.vue"),
+  },
+  {
+    path: "/friendRecruitmenBbs",
+    component: () => import("../views/FriendRecruitmentBbs.vue"),
+  },
+  {
+    path: "/reportBbs",
+    component: () => import("../views/ReportBbs.vue"),
+  },
+  {
+    path: "/eventCapture",
+    component: () => import("../views/EventCapture.vue"),
   },
 ];
 
