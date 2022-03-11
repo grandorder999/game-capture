@@ -46,6 +46,15 @@
         </button>
       </div>
     </article>
+
+    <div class="sidebar-content">
+      <div class="pickup">
+        <h2>人気記事PickUp</h2>
+      </div>
+      <div class="twitter">
+        <h2>公式Twitter</h2>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -76,6 +85,15 @@ export default class XXXComponent extends Vue {
 
 <style scoped>
 .left-menu {
-  text-align: left;
+  text-align: center;
+}
+.sidebar-content {
+  text-align: center;
+}
+.article {
+  text-align: center;
+}
+.container {
+  display: flex;
 }
 </style>

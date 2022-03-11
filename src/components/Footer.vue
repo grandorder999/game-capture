@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div>
+    <img src="/img/image0.jpeg" alt="#" />
+  </div>
 </template>
 
 <script lang="ts">
@@ -8,4 +10,9 @@ import { Component, Vue } from "vue-property-decorator";
 export default class Footer extends Vue {}
 </script>
 
-<style scoped></style>
+<style scoped>
+img {
+  width: 10%;
+  padding-left: 500px;
+}
+</style>
