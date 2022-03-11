@@ -13,6 +13,6 @@ export default class Footer extends Vue {}
 <style scoped>
 img {
   width: 10%;
-  padding-left: 500px;
+  padding-left: 630px;
 }
 </style>
