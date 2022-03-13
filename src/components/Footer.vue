@@ -8,6 +8,9 @@
       <router-link to="/question">よくあるQ&amp;A</router-link> |
       <router-link to="/privacy">プライバシーポリシー</router-link>
     </div>
+    <div class="footer-copyright">
+      <div class="copyright">Copyright&copy; 株式会社Challenger</div>
+    </div>
   </div>
 </template>
 
@@ -25,7 +28,8 @@ img {
   width: 10%;
   padding-left: 630px;
 }
-.sample {
+.sample,
+.copyright {
   text-align: center;
 }
 </style>
