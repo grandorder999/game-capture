@@ -19,6 +19,9 @@
         v-model="articleContent"
       ></textarea>
     </div>
+    <div class="upload">
+      <Upload />
+    </div>
     <button type="button" v-on:click="addArticle">記事投稿</button><br />
     <hr />
 
@@ -50,7 +53,12 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { Article } from "@/types/article";
-@Component
+import Upload from "@/components/Upload.vue";
+@Component({
+  components: {
+    Upload,
+  },
+})
 export default class XXXComponent extends Vue {
   // 投稿者名
   private articleName = "";
