@@ -7,7 +7,9 @@
       この掲示板を利用して、たくさんのマスターとフレンドになることをお勧めします！
     </p>
     <div class="articleNameErrorMessage">{{ articleNameErrorMessage }}</div>
-    <div>投稿者名：<input type="text" v-model="articleName" /></div>
+    <div>
+      投稿者名：<input type="text" v-model="articleName" maxlength="20" />
+    </div>
     <div class="articleContentErrorMessage">
       {{ articleContentErrorMessage }}
     </div>
@@ -20,7 +22,12 @@
       ></textarea>
     </div>
     <div class="upload">
-      <Upload />
+      <div>
+        <input type="file" ref="preview" v-on:change="show" />
+      </div>
+      <div class="preview-box" v-if="url">
+        <img class="image-preview" v-bind:src="url" />
+      </div>
     </div>
     <button type="button" v-on:click="addArticle">記事投稿</button><br />
     <hr />
@@ -28,11 +35,19 @@
     <div
       v-for="(article, articleIndex) of currentArticleList"
       v-bind:key="article.id"
+      class="list"
     >
       <div>投稿者名：{{ article.name }}</div>
       <div>
         投稿内容：
         <pre>{{ article.content }}</pre>
+        <span
+          ><img
+            class="image-preview2"
+            ref="preview2"
+            v-bind:src="article.image"
+            alt="#"
+        /></span>
       </div>
 
       <button type="button" v-on:click="deleteArticle(articleIndex)">
@@ -60,6 +75,7 @@ import Upload from "@/components/Upload.vue";
   },
 })
 export default class XXXComponent extends Vue {
+  private url = "";
   // 投稿者名
   private articleName = "";
   // 投稿内容
@@ -68,6 +84,18 @@ export default class XXXComponent extends Vue {
   private articleNameErrorMessage = "";
   // 投稿内容のエラー
   private articleContentErrorMessage = "";
+  // 現在の投稿一覧
+  private currentArticleList = new Array<Article>();
+
+  created(): void {
+    console.log("createdイベント発生");
+    this.currentArticleList = this.$store.getters.getArticles;
+  }
+
+  show(): void {
+    const file = this.$refs.preview.files[0];
+    this.url = URL.createObjectURL(file);
+  }
 
   /**
    * 記事を追加する.
@@ -98,15 +126,26 @@ export default class XXXComponent extends Vue {
     // もし既に記事が1件でもあれば、最後の記事IDに１を足したものを記事IDとする
     if (articles.length >= 1) {
       newId = articles[0].id + 1;
+    } else {
+      newId = 0;
     }
+    console.log(newId);
     this.$store.commit("addArticle", {
-      article: new Article(newId, this.articleName, this.articleContent, []),
+      article: new Article(
+        newId,
+        this.articleName,
+        this.articleContent,
+        [],
+        this.url
+      ),
     });
+    console.log(articles);
     // 入力値をフォームからクリアする
     this.articleName = "";
     this.articleContent = "";
     this.articleNameErrorMessage = "";
     this.articleContentErrorMessage = "";
+    this.url = "";
   }
   /**
    * 記事を削除する.
@@ -122,5 +161,16 @@ export default class XXXComponent extends Vue {
 .articleNameErrorMessage,
 .articleContentErrorMessage {
   color: red;
+}
+.image-preview2,
+.image-preview {
+  width: 250px;
+  height: 250px;
+  /* 画像の縦横比を維持したまま表示ができるプロパティ */
+  object-fit: cover;
+}
+.list {
+  border: solid 3px black;
+  margin-bottom: 5px;
 }
 </style>

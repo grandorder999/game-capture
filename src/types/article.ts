@@ -11,7 +11,9 @@ export class Article {
     // 内容
     private _content: string,
     // コメント一覧
-    private _commentList: Array<Comment>
+    private _commentList: Array<Comment>,
+    // 画像
+    private _image: string
   ) {}
 
   public get id(): number {
@@ -44,5 +46,13 @@ export class Article {
 
   public set commentList(commentList: Array<Comment>) {
     this._commentList = commentList;
+  }
+
+  public get image(): string {
+    return this._image;
+  }
+
+  public set image(image: string) {
+    this._image = image;
   }
 }
