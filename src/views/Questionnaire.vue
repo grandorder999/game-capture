@@ -227,7 +227,17 @@
             id="テトリス"
           />テトリス
         </label>
-        <div>その他：<br /></div>
+        <div>
+          その他：
+          <textarea
+            name="other"
+            id="other"
+            cols="30"
+            rows="3"
+            v-model.lazy="other"
+          ></textarea>
+          <br />
+        </div>
       </div>
       <hr />
 

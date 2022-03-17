@@ -12,9 +12,9 @@ export default new Vuex.Store({
       new Article(
         1,
         "カルナ",
-        "こんばんは。",
-        [new Comment(13, "アルジュナ", "こんばんは、カルナ。", 1)],
-        "/img/image0.jpeg"
+        "サポ編載せときます。",
+        [new Comment(13, "アルジュナ", "いいですね！", 1)],
+        "/img/image4.png"
       ),
     ],
     articles2: [
