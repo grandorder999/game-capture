@@ -95,7 +95,6 @@ export default class XXXComponent extends Vue {
 
   show(): void {
     const file = this.$refs.preview.files[0];
-    console.log(this.$refs.preview.files[0]);
     this.url = URL.createObjectURL(file);
   }
 

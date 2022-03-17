@@ -31,11 +31,9 @@ export default new Vuex.Store({
   mutations: {
     addArticle(state, payload) {
       state.articles.unshift(payload.article);
-      console.log(state.articles);
     },
     addArticle1(state, payload) {
       state.articles2.unshift(payload.article);
-      console.log(state.articles2);
     },
 
     deleteArticle(state, payload) {
