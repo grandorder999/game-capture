@@ -17,6 +17,15 @@ export default new Vuex.Store({
         "/img/image0.jpeg"
       ),
     ],
+    articles2: [
+      new Article(
+        1,
+        "メリュジーヌ",
+        "闇コヤンゲット。",
+        [new Comment(13, "モルガン", "ずるい。", 1)],
+        "/img/image3.png"
+      ),
+    ],
   },
   actions: {},
   mutations: {
@@ -24,6 +33,11 @@ export default new Vuex.Store({
       state.articles.unshift(payload.article);
       console.log(state.articles);
     },
+    addArticle1(state, payload) {
+      state.articles2.unshift(payload.article);
+      console.log(state.articles2);
+    },
+
     deleteArticle(state, payload) {
       state.articles.splice(payload.index, 1);
     },
@@ -32,6 +46,9 @@ export default new Vuex.Store({
   getters: {
     getArticles(state) {
       return state.articles;
+    },
+    getArticles1(state) {
+      return state.articles2;
     },
   },
 });

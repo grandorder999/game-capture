@@ -94,6 +94,7 @@ export default class XXXComponent extends Vue {
 
   show(): void {
     const file = this.$refs.preview.files[0];
+    console.log(this.$refs.preview.files[0]);
     this.url = URL.createObjectURL(file);
   }
 
@@ -164,7 +165,7 @@ export default class XXXComponent extends Vue {
 }
 .image-preview2,
 .image-preview {
-  width: 250px;
+  width: 500px;
   height: 250px;
   /* 画像の縦横比を維持したまま表示ができるプロパティ */
   object-fit: cover;
