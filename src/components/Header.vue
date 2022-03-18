@@ -13,9 +13,9 @@ export default class Header extends Vue {}
 <style scoped>
 .header {
   margin-bottom: 20px;
+  text-align: center;
 }
 img {
   width: 30%;
-  padding-left: 500px;
 }
 </style>

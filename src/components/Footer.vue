@@ -24,10 +24,10 @@ export default class Footer extends Vue {}
 .footer {
   margin-top: 20px;
   background-color: lightgrey;
+  text-align: center;
 }
 img {
   width: 10%;
-  padding-left: 630px;
   padding-top: 10px;
 }
 .sample,

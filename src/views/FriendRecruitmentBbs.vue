@@ -172,5 +172,6 @@ export default class XXXComponent extends Vue {
 .list {
   border: solid 3px black;
   margin-bottom: 5px;
+  background-color: white;
 }
 </style>
