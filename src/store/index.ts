@@ -30,8 +30,38 @@ export default new Vuex.Store({
     ],
     servants: Array<Servant>(),
   },
-  actions: {},
+  actions: {
+    async getServants(context) {
+      const responce = await axios.get(
+        "https://api.atlasacademy.io/export/JP/basic_servant.json"
+      );
+      console.dir("responce:" + JSON.stringify(responce));
+      const payload = responce.data;
+      context.commit("showServants", payload);
+    },
+  },
   mutations: {
+    showServants(state, payload) {
+      state.servants = new Array<Servant>();
+      for (const servant of payload) {
+        state.servants.push(
+          new Servant(
+            servant.id,
+            servant.collectionNo,
+            servant.name,
+            servant.type,
+            servant.flag,
+            servant.className,
+            servant.attribute,
+            servant.rarity,
+            servant.atkMax,
+            servant.hpMax,
+            servant.face,
+            servant.costume
+          )
+        );
+      }
+    },
     addArticle(state, payload) {
       state.articles.unshift(payload.article);
     },
@@ -45,6 +75,9 @@ export default new Vuex.Store({
   },
   modules: {},
   getters: {
+    getServants(state) {
+      return state.servants;
+    },
     getArticles(state) {
       return state.articles;
     },

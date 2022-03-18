@@ -13,7 +13,7 @@ export class Servant {
     private _atkMax: number,
     private _hpMax: number,
     private _face: string,
-    private _costume: Costume
+    private _costume: Array<Costume>
   ) {}
 
   public get id(): number {
@@ -104,11 +104,11 @@ export class Servant {
     this._face = face;
   }
 
-  public get costume(): Costume {
+  public get costume(): Array<Costume> {
     return this._costume;
   }
 
-  public set costume(costume: Costume) {
+  public set costume(costume: Array<Costume>) {
     this._costume = costume;
   }
 }
