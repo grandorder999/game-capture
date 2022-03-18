@@ -2,6 +2,8 @@ import Vue from "vue";
 import Vuex from "vuex";
 import { Article } from "@/types/article";
 import { Comment } from "@/types/comment";
+import { Servant } from "@/types/Servant";
+import axios from "axios";
 
 Vue.use(Vuex);
 
@@ -26,6 +28,7 @@ export default new Vuex.Store({
         "/img/image3.png"
       ),
     ],
+    servants: Array<Servant>(),
   },
   actions: {},
   mutations: {
