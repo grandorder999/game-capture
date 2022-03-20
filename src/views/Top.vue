@@ -59,6 +59,7 @@
       </div>
       <div class="twitter">
         <h2>公式Twitter</h2>
+        <Twitter />
       </div>
     </div>
   </div>
@@ -66,7 +67,12 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-@Component
+import Twitter from "@/components/Twitter.vue";
+@Component({
+  components: {
+    Twitter,
+  },
+})
 export default class XXXComponent extends Vue {
   moveToBbs1(): void {
     this.$router.push("/friendRecruitmenBbs");
