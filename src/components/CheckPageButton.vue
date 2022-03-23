@@ -1,18 +1,14 @@
 <template>
   <div class="container">
-    <button
-      value="未取得"
-      type="button"
-      v-if="!flag"
-      v-on:click="changeButtonText"
-    >
+    <button value="未取得" type="button" v-if="!flag" v-on:click="preClick">
       未取得
     </button>
     <button
+      class="button2"
       value="取得済"
       type="button"
-      v-if="flag"
-      v-on:click="changeButtonText"
+      v-else
+      v-on:click="preClick"
     >
       取得済
     </button>
@@ -33,14 +29,22 @@ export default class XXXComponent extends Vue {
     console.log(flag);
   }
   preClick(): void {
-    if (this.flag) {
+    if (this.flag === false) {
       this.flag = true;
     } else {
       this.flag = false;
     }
-    // this.changeButtonText(this.flag);
+    this.changeButtonText(this.flag);
   }
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+button {
+  margin-bottom: 5px;
+}
+.button2 {
+  background-color: bisque;
+  color: crimson;
+}
+</style>

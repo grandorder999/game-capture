@@ -139,7 +139,6 @@ export default class XXXComponent extends Vue {
         this.url
       ),
     });
-    console.log(articles);
     // 入力値をフォームからクリアする
     this.articleName = "";
     this.articleContent = "";

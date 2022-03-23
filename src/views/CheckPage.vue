@@ -1,30 +1,32 @@
 <template>
-  <div class="container">
-    <div class="servants">
-      <!-- <h2>🌟所持サーヴァントチェッカー🌟</h2> -->
-      <div v-for="servant of currentServants" :key="servant.id">
-        <img :src="servant.face" /><br />
-        <CheckPageButton
-          servant-id="servant.id"
-          v-on:change-button-text="onChange"
-        ></CheckPageButton>
+  <div class="sample">
+    <h2>所持サーヴァントチェッカー</h2>
+    <div class="container">
+      <div class="servants">
+        <div v-for="servant of currentServants" :key="servant.id">
+          <img :src="servant.face" /><br />
+          <CheckPageButton
+            servant-id="servant.id"
+            v-on:change-button-text="onChange"
+          ></CheckPageButton>
+        </div>
+        <table border="1" width="250">
+          <tr>
+            <td>現在の所持数</td>
+            <td>
+              <span class="red">{{ possession }}</span
+              >/336
+            </td>
+          </tr>
+          <tr>
+            <td>現在コンプリート率</td>
+            <td>
+              <span class="blue">{{ complete.toFixed(digit) }}</span
+              >%
+            </td>
+          </tr>
+        </table>
       </div>
-      <table border="1" width="250">
-        <tr>
-          <td>現在の所持数</td>
-          <td>
-            <span class="red">{{ possession }}</span
-            >/329
-          </td>
-        </tr>
-        <tr>
-          <td>現在コンプリート率</td>
-          <td>
-            <span class="blue">{{ complete }}</span
-            >%
-          </td>
-        </tr>
-      </table>
     </div>
   </div>
 </template>
@@ -42,6 +44,7 @@ export default class XXXComponent extends Vue {
   private currentServants: Array<Servant> = [];
   private possession = 0;
   private complete = 0;
+  private digit = 1;
 
   async created(): Promise<void> {
     await this.$store.dispatch("getServants");
@@ -51,14 +54,23 @@ export default class XXXComponent extends Vue {
   onChange(flag: boolean): void {
     if (flag) {
       this.possession++;
+      this.calcRate(this.possession);
     } else {
       this.possession--;
+      this.calcRate(this.possession);
     }
+  }
+
+  calcRate(possession: number): void {
+    this.complete = (possession / 336) * 100;
   }
 }
 </script>
 
 <style scoped>
+h2 {
+  text-align: center;
+}
 .container {
   display: flex;
   justify-content: center;
@@ -80,6 +92,7 @@ button {
   margin-right: 5px;
 }
 table {
+  margin-top: 15px;
   background-color: white;
 }
 .red {
