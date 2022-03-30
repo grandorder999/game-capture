@@ -18,4 +18,7 @@ export default class Header extends Vue {}
 img {
   width: 30%;
 }
+img:hover {
+  opacity: 0.8;
+}
 </style>

@@ -1,6 +1,9 @@
 <template>
   <div class="footer">
     <img src="/img/image0.jpeg" alt="#" />
+    <div class="scroll">
+      <a href="#" id="page-top">ページ上部へ戻る</a>
+    </div>
     <div class="sample">
       <router-link to="/companyOverview">会社概要</router-link> |
       <router-link to="/employeeInfo">採用情報</router-link> |
@@ -28,10 +31,14 @@ export default class Footer extends Vue {}
 }
 img {
   width: 10%;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 .sample,
 .copyright {
   text-align: center;
+}
+.scroll {
+  text-align: right;
+  margin-right: 50px;
 }
 </style>
