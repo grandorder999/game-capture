@@ -2,7 +2,7 @@
   <div class="footer">
     <img src="/img/image0.jpeg" alt="#" />
     <div class="scroll">
-      <a href="#" id="page-top">ページ上部へ戻る</a>
+      <a class="return" href="#" id="page-top">ページ上部へ戻る</a>
     </div>
     <div class="sample">
       <router-link to="/companyOverview">会社概要</router-link> |
@@ -40,5 +40,12 @@ img {
 .scroll {
   text-align: right;
   margin-right: 50px;
+}
+.return {
+  color: white;
+  padding: 15px;
+  background-color: lightpink;
+  cursor: pointer;
+  border-radius: 5px;
 }
 </style>

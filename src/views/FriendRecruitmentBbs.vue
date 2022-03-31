@@ -29,7 +29,9 @@
         <img class="image-preview" v-bind:src="url" />
       </div>
     </div>
-    <button type="button" v-on:click="addArticle">記事投稿</button><br />
+    <button class="post-button" type="button" v-on:click="addArticle">
+      記事投稿</button
+    ><br />
     <hr />
 
     <div
@@ -172,5 +174,41 @@ export default class XXXComponent extends Vue {
   border: solid 3px black;
   margin-bottom: 5px;
   background-color: white;
+}
+.post-button {
+  margin-top: 10px;
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  overflow: hidden;
+  border-radius: 5px;
+  border: none;
+  background-color: #80ed99;
+}
+.post-button:hover {
+  border-radius: 5px;
+  padding-right: 24px;
+  padding-left: 8px;
+}
+.post-button:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+.post-button:after {
+  content: "\00BB";
+  position: absolute;
+  opacity: 0;
+  font-size: 20px;
+  line-height: 40px;
+  top: 0;
+  right: -20px;
+  transition: 0.4s;
 }
 </style>
