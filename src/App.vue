@@ -20,4 +20,8 @@ import Footer from "./components/Footer.vue";
 export default class App extends Vue {}
 </script>
 
-<style></style>
+<style>
+body {
+  font-family: "YuGothic", "游ゴシック体";
+}
+</style>

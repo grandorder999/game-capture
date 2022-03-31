@@ -1,59 +1,61 @@
 <template>
   <div class="container">
-    <button type="button" class="select" v-on:click="selectServant">
-      サーヴァントを選択する
-    </button>
-    <div class="check-servant">
-      <img class="img1" :src="servantImg" />
-      <div class="servant-name">{{ servantName }}</div>
-    </div>
-    <div class="list" v-if="flag">
-      <div
-        v-for="(servant, index) of servantList"
-        :key="servant.id"
-        class="servant"
-      >
-        <img class="img2" :src="servant.face" /><br />
-        <button type="button" class="check" v-on:click="check(index)">
-          選択
-        </button>
+    <div class="container2">
+      <button type="button" class="select" v-on:click="selectServant">
+        サーヴァントを選択する
+      </button>
+      <div class="check-servant">
+        <img class="img1" :src="servantImg" />
+        <div class="servant-name">{{ servantName }}</div>
       </div>
-    </div>
-    <table border="1" align="center" class="table1">
-      <tr>
-        <th>ATK</th>
-        <th>宝具レベル</th>
-      </tr>
-      <tr>
-        <td>{{ atk }}</td>
-        <td>
-          <select
-            name="servant"
-            id="servant"
-            v-on:change="calcTreasureLevel"
-            v-model="level"
-          >
-            <option value="1">Lv.1</option>
-            <option value="2">Lv.2</option>
-            <option value="3">Lv.3</option>
-            <option value="4">Lv.4</option>
-            <option value="5">Lv.5</option>
-          </select>
-        </td>
-      </tr>
-    </table>
-    <div class="result">
-      <div class="sub">計算結果</div>
-      <table border="1" align="center" class="table2">
+      <div class="list" v-if="flag">
+        <div
+          v-for="(servant, index) of servantList"
+          :key="servant.id"
+          class="servant"
+        >
+          <img class="img2" :src="servant.face" /><br />
+          <button type="button" class="check" v-on:click="check(index)">
+            選択
+          </button>
+        </div>
+      </div>
+      <table border="1" align="center" class="table1">
         <tr>
-          <th>最小</th>
-          <th>最大</th>
+          <th>ATK</th>
+          <th>宝具レベル</th>
         </tr>
         <tr>
-          <td>{{ minAtk }}</td>
-          <td>{{ maxAtk }}</td>
+          <td>{{ atk }}</td>
+          <td>
+            <select
+              name="servant"
+              id="servant"
+              v-on:change="calcTreasureLevel"
+              v-model="level"
+            >
+              <option value="1">Lv.1</option>
+              <option value="2">Lv.2</option>
+              <option value="3">Lv.3</option>
+              <option value="4">Lv.4</option>
+              <option value="5">Lv.5</option>
+            </select>
+          </td>
         </tr>
       </table>
+      <div class="result">
+        <div class="sub">計算結果</div>
+        <table border="1" align="center" class="table2">
+          <tr>
+            <th>最小</th>
+            <th>最大</th>
+          </tr>
+          <tr>
+            <td>{{ minAtk }}</td>
+            <td>{{ maxAtk }}</td>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
 </template>
@@ -136,8 +138,14 @@ export default class XXXComponent extends Vue {
 </script>
 
 <style scoped>
+/* 全体 */
 .container {
   text-align: center;
+}
+.container2 {
+  background-color: rgb(253, 237, 219);
+  padding-top: 20px;
+  padding-bottom: 15px;
 }
 .result {
   margin-top: 20px;
@@ -171,11 +179,34 @@ th {
 td {
   padding: 10px;
 }
-.select {
-  margin-bottom: 20px;
-}
 .table1 {
   margin-top: 20px;
+}
+.select {
+  margin-bottom: 20px;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 500px;
+  transition-property: background-color, border-color, color, box-shadow, filter;
+  transition-duration: 0.3s;
+  border: 1px solid transparent;
+  letter-spacing: 2px;
+  min-width: 160px;
+  text-transform: uppercase;
+  white-space: normal;
+  font-weight: 700;
+  text-align: center;
+  padding: 16px 14px 18px;
+  color: #fff;
+  box-shadow: inset 0 0 0 2px #616467;
+  background-color: #616467;
+  height: 48px;
+}
+.select:hover {
+  opacity: 0.8;
 }
 .servant-name {
   font-weight: bold;
