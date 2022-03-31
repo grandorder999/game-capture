@@ -3,7 +3,10 @@
     <button type="button" class="select" v-on:click="selectServant">
       サーヴァントを選択する
     </button>
-    <img class="img1" :src="servantImg" />
+    <div class="check-servant">
+      <img class="img1" :src="servantImg" />
+      <div class="servant-name">{{ servantName }}</div>
+    </div>
     <div class="list" v-if="flag">
       <div
         v-for="(servant, index) of servantList"
@@ -68,12 +71,16 @@ export default class XXXComponent extends Vue {
   private flag = false;
   // 選択したサーヴァントの画像
   private servantImg = "";
+  // 選択したサーヴァントの名前
+  private servantName = "";
   // 最小威力
   private minAtk = 0;
   // 最大威力
   private maxAtk = 0;
   // 宝具レベル
   private level = "1";
+  // インデックス
+  private initIndex = 0;
 
   /**
    * 非同期処理.
@@ -95,15 +102,19 @@ export default class XXXComponent extends Vue {
    */
   check(index: number): void {
     this.flag = false;
+    this.servantName = this.servantList[index].name;
     this.servantImg = this.servantList[index].face;
     this.atk = this.servantList[index].atkMax;
     this.minAtk = Math.floor(this.servantList[index].atkMax * 1.35);
     this.maxAtk = Math.floor(this.minAtk * 1.22);
+    this.initIndex = index;
   }
   /**
    * 宝具レベルごとに威力が変わる機能.
    */
   calcTreasureLevel(): void {
+    this.minAtk = Math.floor(this.servantList[this.initIndex].atkMax * 1.35);
+    this.maxAtk = Math.floor(this.minAtk * 1.22);
     if (this.level === "2") {
       this.minAtk = Math.floor(this.minAtk * 1.25);
       this.maxAtk = Math.floor(this.minAtk * 1.22);
@@ -165,5 +176,8 @@ td {
 }
 .table1 {
   margin-top: 20px;
+}
+.servant-name {
+  font-weight: bold;
 }
 </style>
