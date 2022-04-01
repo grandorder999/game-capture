@@ -52,6 +52,10 @@ const routes: Array<RouteConfig> = [
     path: "/privacy",
     component: () => import("../views/Privacy.vue"),
   },
+  {
+    path: "/silhouette",
+    component: () => import("../views/Silhouette.vue"),
+  },
 ];
 
 const router = new VueRouter({

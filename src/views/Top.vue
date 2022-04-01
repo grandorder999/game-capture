@@ -54,8 +54,11 @@
 
     <div class="sidebar-content">
       <div class="pickup">
-        <h2>人気記事PickUp</h2>
-        <img class="img" src="/img/image8.png" />
+        <h2>2022年シルエットサーヴァント</h2>
+        <img class="img" src="/img/silhouette.jpeg" /><br />
+        <button type="button" v-on:click="moveTosilhouette">
+          ここをクリック
+        </button>
       </div>
       <div class="twitter">
         <h2>公式Twitter</h2>
@@ -91,6 +94,9 @@ export default class XXXComponent extends Vue {
   }
   moveToCalcTreasure(): void {
     this.$router.push("/calcTreasurePage");
+  }
+  moveTosilhouette(): void {
+    this.$router.push("/silhouette");
   }
 }
 </script>
@@ -189,5 +195,8 @@ button:active::before,
 button:active::after {
   border: none;
   box-shadow: none;
+}
+.twitter {
+  height: 560px;
 }
 </style>

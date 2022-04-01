@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <div class="container2">
+      <h2>宝具威力計算ツール</h2>
       <button type="button" class="select" v-on:click="selectServant">
         サーヴァントを選択する
       </button>
@@ -144,7 +145,7 @@ export default class XXXComponent extends Vue {
 }
 .container2 {
   background-color: rgb(253, 237, 219);
-  padding-top: 20px;
+  padding-top: 5px;
   padding-bottom: 15px;
 }
 .result {
