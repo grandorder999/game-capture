@@ -48,4 +48,7 @@ img {
   cursor: pointer;
   border-radius: 5px;
 }
+.return:hover {
+  opacity: 0.8;
+}
 </style>

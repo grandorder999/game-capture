@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <div class="container2">
+      <h2>宝具威力計算ツール</h2>
       <button type="button" class="select" v-on:click="selectServant">
         サーヴァントを選択する
       </button>
@@ -89,6 +90,25 @@ export default class XXXComponent extends Vue {
    * @param Promiseオブジェクト
    */
   async created(): Promise<void> {
+    // スクロールトップボタン
+    scrollTop(1); // 遅すぎるとガクガクになるので注意
+    function scrollTop(duration: number) {
+      let currentY = window.pageYOffset; // 現在のスクロール位置を取得
+      let step = duration / currentY > 1 ? 10 : 100; // 三項演算子
+      let timeStep = (duration / currentY) * step; // スクロール時間
+      let intervalId = setInterval(scrollUp, timeStep);
+      // timeStepの間隔でscrollUpを繰り返す。
+      // clearItervalのために返り値intervalIdを定義する。
+      function scrollUp() {
+        currentY = window.pageYOffset;
+        if (currentY === 0) {
+          clearInterval(intervalId); // ページ最上部に来たら終了
+        } else {
+          scrollBy(0, -step); // step分上へスクロール
+        }
+      }
+    }
+
     this.$store.dispatch("getServants");
     this.servantList = this.$store.getters.getServants;
   }
@@ -144,7 +164,7 @@ export default class XXXComponent extends Vue {
 }
 .container2 {
   background-color: rgb(253, 237, 219);
-  padding-top: 20px;
+  padding-top: 5px;
   padding-bottom: 15px;
 }
 .result {
