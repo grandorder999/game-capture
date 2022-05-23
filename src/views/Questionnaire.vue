@@ -207,7 +207,7 @@
             id="other"
             cols="30"
             rows="3"
-            v-model.lazy="other"
+            v-model.lazy="other1"
           ></textarea>
           <br />
         </div>
@@ -221,7 +221,7 @@
           id="other"
           cols="50"
           rows="5"
-          v-model.lazy="other"
+          v-model.lazy="other2"
         ></textarea>
       </div>
       <hr />
@@ -256,7 +256,8 @@ export default class XXXComponent extends Vue {
   private start = "0";
   private game = "0";
   private story = "0";
-  private other = "";
+  private other1 = "";
+  private other2 = "";
   private like = "";
   private agree = false;
 
