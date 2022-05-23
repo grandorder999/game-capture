@@ -6,35 +6,28 @@
     </div>
     <div></div>
     <div class="questionnaire">
-      <h5>アンケートフォーム</h5>
+      <h4>アンケートフォーム</h4>
       <div>
         年齢(数値のみ入力可)：<input type="text" v-model.number="age" />
       </div>
       <hr />
 
       <div>
-        性別：<label for="man"
-          ><input
-            type="radio"
-            v-model="gender"
-            value="男性"
-            id="man"
-          />男性</label
+        性別：<label
+          ><input type="radio" v-model="gender" value="男性" />
+          <span>男性</span></label
         >
-        <label for="woman"
-          ><input
-            type="radio"
-            v-model="gender"
-            value="女性"
-            id="woman"
-          />女性</label
+        <label
+          ><input type="radio" v-model="gender" value="女性" /><span
+            >女性</span
+          ></label
         >
       </div>
       <hr />
 
       <div>
         1日あたりのプレイ時間はどのくらいですか？：
-        <select name="time" id="time" v-model="time">
+        <select style="display: block" name="time" id="time" v-model="time">
           <option value="0">選択する</option>
           <option value="1">ログインのみ</option>
           <option value="2">30分以内</option>
@@ -48,7 +41,7 @@
 
       <div>
         どのくらいの頻度でゲームをしますか？：
-        <select name="game" id="game" v-model="game">
+        <select style="display: block" name="game" id="game" v-model="game">
           <option value="0">選択する</option>
           <option value="1">毎日する</option>
           <option value="2">週に4〜5回</option>
@@ -62,7 +55,7 @@
 
       <div>
         ゲーム開始時期はいつ頃ですか？：
-        <select name="start" id="start" v-model="start">
+        <select style="display: block" name="start" id="start" v-model="start">
           <option value="0">選択する</option>
           <option value="1">1ヶ月以内</option>
           <option value="2">3ヶ月以内</option>
@@ -77,7 +70,7 @@
 
       <div>
         1番好きなメインストーリーは？：
-        <select name="story" id="story" v-model="story">
+        <select style="display: block" name="story" id="story" v-model="story">
           <option value="0">選択する</option>
           <option value="1">1部 炎上汚染都市 冬木</option>
           <option value="2">1部 邪竜百年戦争 オルレアン</option>
@@ -117,115 +110,95 @@
 
       <div>
         他にやっているゲームはありますか？（複数選択可）：
-        <label for="パズドラ"
-          ><input
-            type="checkbox"
-            v-model="hobby"
-            value="パズドラ"
-            id="パズドラ"
-          />パズドラ</label
+        <label
+          ><input type="checkbox" v-model="hobby" value="パズドラ" />
+          <span class="game-name">パズドラ</span></label
         >
-        <label for="モンスト"
-          ><input
-            type="checkbox"
-            v-model="hobby"
-            value="モンスト"
-            id="モンスト"
-          />モンスト</label
+        <label
+          ><input type="checkbox" v-model="hobby" value="モンスト" /><span
+            class="game-name"
+            >モンスト</span
+          ></label
         >
-        <label for="ウマ娘"
-          ><input
-            type="checkbox"
-            v-model="hobby"
-            value="ウマ娘"
-            id="ウマ娘"
-          />ウマ娘</label
+        <label
+          ><input type="checkbox" v-model="hobby" value="ウマ娘" /><span
+            class="game-name"
+            >ウマ娘</span
+          ></label
         >
-        <label for="あんすた">
-          <input
-            type="checkbox"
-            v-model="hobby"
-            value="あんすた"
-            id="あんすた"
-          />あんすた
+        <label>
+          <input type="checkbox" v-model="hobby" value="あんすた" /><span
+            class="game-name"
+            >あんすた</span
+          >
         </label>
-        <label for="アイナナ">
-          <input
-            type="checkbox"
-            v-model="hobby"
-            value="アイナナ"
-            id="アイナナ"
-          />アイナナ
+        <label>
+          <input type="checkbox" v-model="hobby" value="アイナナ" /><span
+            class="game-name"
+            >アイナナ</span
+          >
         </label>
-        <label for="原神">
-          <input type="checkbox" v-model="hobby" value="原神" id="原神" />原神
+        <label>
+          <input type="checkbox" v-model="hobby" value="原神" /><span
+            class="game-name"
+            >原神</span
+          >
         </label>
-        <label for="ポケモンGO">
-          <input
-            type="checkbox"
-            v-model="hobby"
-            value="ポケモンGO"
-            id="ポケモンGO"
-          />ポケモンGO
+        <label>
+          <input type="checkbox" v-model="hobby" value="ポケモンGO" /><span
+            class="game-name"
+            >ポケモンGO</span
+          >
         </label>
-        <label for="ツイステ">
-          <input
-            type="checkbox"
-            v-model="hobby"
-            value="ツイステ"
-            id="ツイステ"
-          />ツイステ<br />
+        <label>
+          <input type="checkbox" v-model="hobby" value="ツイステ" /><span
+            class="game-name"
+            >ツイステ</span
+          >
         </label>
-        <label for="ディズニーツムツム"
+        <label
           ><input
             type="checkbox"
             v-model="hobby"
             value="ディズニーツムツム"
-            id="ディズニーツムツム"
-          />ディズニーツムツム</label
+          /><span class="game-name">ディズニーツムツム</span></label
         >
-        <label for="マリオカート">
-          <input
-            type="checkbox"
-            v-model="hobby"
-            value="マリオカート"
-            id="マリオカート"
-          />マリオカート
+        <label>
+          <input type="checkbox" v-model="hobby" value="マリオカート" /><span
+            class="game-name"
+            >マリオカート</span
+          >
         </label>
-        <label for="キャンディークラッシュ">
+        <label>
           <input
             type="checkbox"
             v-model="hobby"
             value="キャンディークラッシュ"
-            id="キャンディークラッシュ"
-          />キャンディークラッシュ
+          /><span class="game-name">キャンディークラッシュ</span>
         </label>
-        <label for="COD">
-          <input type="checkbox" v-model="hobby" value="COD" id="COD" />COD
+        <label>
+          <input type="checkbox" v-model="hobby" value="COD" /><span
+            class="game-name"
+            >COD</span
+          >
         </label>
-        <label for="遊戯王">
-          <input
-            type="checkbox"
-            v-model="hobby"
-            value="遊戯王"
-            id="遊戯王"
-          />遊戯王
+        <label>
+          <input type="checkbox" v-model="hobby" value="遊戯王" /><span
+            class="game-name"
+            >遊戯王</span
+          >
         </label>
-        <label for="ぷよぷよ">
-          <input
-            type="checkbox"
-            v-model="hobby"
-            value="ぷよぷよ"
-            id="ぷよぷよ"
-          />ぷよぷよ
+        <label>
+          <input type="checkbox" v-model="hobby" value="ぷよぷよ" /><span
+            class="game-name"
+            >ぷよぷよ</span
+          >
         </label>
-        <label for="テトリス">
-          <input
-            type="checkbox"
-            v-model="hobby"
-            value="テトリス"
-            id="テトリス"
-          />テトリス
+        <label>
+          <input type="checkbox" v-model="hobby" value="テトリス" /><span
+            class="game-name"
+            >テトリス</span
+          >
         </label>
         <div>
           その他：
@@ -253,21 +226,22 @@
       </div>
       <hr />
 
-      <label for="robot"
-        ><div>
-          私はロボットではありません。<input
-            type="checkbox"
-            v-model="agree"
-            id="robot"
-          /></div
-      ></label>
+      <label>
+        <input type="checkbox" v-model="agree" /><span
+          >私はロボットではありません。</span
+        ></label
+      >
       <hr />
 
-      <button type="button" v-bind:disabled="!agree" v-on:click="submit">
+      <button
+        class="btn"
+        type="button"
+        v-bind:disabled="!agree"
+        v-on:click="submit"
+      >
         送信する
       </button>
     </div>
-    <div class="content">ご協力いただきありがとうございました！</div>
   </div>
 </template>
 
@@ -311,6 +285,7 @@ export default class XXXComponent extends Vue {
    */
   submit(): void {
     console.log("発生");
+    this.$router.push("/success");
   }
 }
 </script>
@@ -321,9 +296,17 @@ export default class XXXComponent extends Vue {
   border: solid 3px black;
   background-color: snow;
 }
-.description,
-.content {
+.description {
   text-align: center;
   font-size: 20px;
+}
+.game-name {
+  margin-right: 10px;
+}
+textarea {
+  background-color: white;
+}
+.btn {
+  margin-bottom: 10px;
 }
 </style>

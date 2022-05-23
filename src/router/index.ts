@@ -36,6 +36,10 @@ const routes: Array<RouteConfig> = [
     path: "/silhouette",
     component: () => import("../views/Silhouette.vue"),
   },
+  {
+    path: "/success",
+    component: () => import("../views/Success.vue"),
+  },
 ];
 
 const router = new VueRouter({
