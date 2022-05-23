@@ -33,26 +33,6 @@ const routes: Array<RouteConfig> = [
     component: () => import("../views/CalcTreasurePage.vue"),
   },
   {
-    path: "/companyOverview",
-    component: () => import("../views/CompanyOverview.vue"),
-  },
-  {
-    path: "/employeeInfo",
-    component: () => import("../views/EmployeeInfo.vue"),
-  },
-  {
-    path: "/inquiry",
-    component: () => import("../views/Inquiry.vue"),
-  },
-  {
-    path: "/question",
-    component: () => import("../views/Question.vue"),
-  },
-  {
-    path: "/privacy",
-    component: () => import("../views/Privacy.vue"),
-  },
-  {
     path: "/silhouette",
     component: () => import("../views/Silhouette.vue"),
   },

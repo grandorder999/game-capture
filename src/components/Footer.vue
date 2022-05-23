@@ -4,13 +4,6 @@
     <div class="scroll">
       <a class="return" href="#" id="page-top">ページ上部へ戻る</a>
     </div>
-    <div class="sample">
-      <router-link to="/companyOverview">会社概要</router-link> |
-      <router-link to="/employeeInfo">採用情報</router-link> |
-      <router-link to="/inquiry">お問い合わせ</router-link> |
-      <router-link to="/question">よくあるQ&amp;A</router-link> |
-      <router-link to="/privacy">プライバシーポリシー</router-link>
-    </div>
     <div class="footer-copyright">
       <div class="copyright">Copyright&copy; 株式会社Challenger</div>
     </div>

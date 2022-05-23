@@ -13,7 +13,6 @@
         <td class="anastasia">2部1章「アナスタシア」クリア</td>
       </tr>
     </table>
-    <div>フリークエスト一覧</div>
   </div>
 </template>
 
