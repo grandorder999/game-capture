@@ -12,6 +12,7 @@ export default class Header extends Vue {}
 
 <style scoped>
 .header {
+  margin-top: 15px;
   margin-bottom: 20px;
   text-align: center;
 }
