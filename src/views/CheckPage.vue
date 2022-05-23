@@ -1,6 +1,6 @@
 <template>
   <div class="sample">
-    <h2>所持サーヴァントチェッカー</h2>
+    <h5>所持サーヴァントチェッカー</h5>
     <div class="container">
       <div class="servants">
         <div v-for="servant of currentServants" :key="servant.id">
@@ -12,16 +12,16 @@
         </div>
         <table border="1" width="250">
           <tr>
-            <td>現在の所持数</td>
+            <td><span class="sub">現在の所持数</span></td>
             <td>
-              <span class="red">{{ possession }}</span
+              <span class="r1">{{ possession }}</span
               >/336
             </td>
           </tr>
           <tr>
-            <td>現在コンプリート率</td>
+            <td><span class="sub">現在コンプリート率</span></td>
             <td>
-              <span class="blue">{{ complete.toFixed(digit) }}</span
+              <span class="b1">{{ complete.toFixed(digit) }}</span
               >%
             </td>
           </tr>
@@ -87,7 +87,7 @@ export default class XXXComponent extends Vue {
 </script>
 
 <style scoped>
-h2 {
+h5 {
   text-align: center;
 }
 .container {
@@ -99,25 +99,27 @@ h2 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  width: 50%;
+  width: 85%;
 }
 img {
-  width: 50px;
+  width: 55px;
   margin-right: 5px;
-  margin-left: 3px;
-}
-button {
-  margin-bottom: 5px;
-  margin-right: 5px;
+  margin-left: 12px;
 }
 table {
   margin-top: 15px;
   background-color: white;
 }
-.red {
+.r1 {
   color: red;
 }
-.blue {
+.b1 {
   color: blue;
+}
+.sub {
+  padding-left: 150px;
+}
+td {
+  width: 70px;
 }
 </style>

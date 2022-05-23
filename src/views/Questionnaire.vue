@@ -6,7 +6,7 @@
     </div>
     <div></div>
     <div class="questionnaire">
-      <h1>アンケートフォーム</h1>
+      <h5>アンケートフォーム</h5>
       <div>
         年齢(数値のみ入力可)：<input type="text" v-model.number="age" />
       </div>

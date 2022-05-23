@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2>バトルインニューヨーク2022の攻略</h2>
+    <h4>バトルインニューヨーク2022の攻略</h4>
     <div>開催期間について</div>
     <img src="/img/image11.jpeg" />
     <table border="1">

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="container2">
-      <h2>宝具威力計算ツール</h2>
+      <h4>宝具威力計算ツール</h4>
       <button type="button" class="select" v-on:click="selectServant">
         サーヴァントを選択する
       </button>

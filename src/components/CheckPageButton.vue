@@ -41,7 +41,10 @@ export default class XXXComponent extends Vue {
 
 <style scoped>
 button {
+  width: 80px;
   margin-bottom: 5px;
+  padding: 3px;
+  font-size: 13px;
 }
 .button2 {
   background-color: bisque;

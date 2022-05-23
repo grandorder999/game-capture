@@ -2,49 +2,43 @@
   <div class="container">
     <aside class="left-menu">
       <div>
-        <nav>
-          <div class="friend">
-            <h2>フレンド募集はこちらから</h2>
-            <img class="img" src="/img/image8.png" /><br />
-            <button type="button" v-on:click="moveToBbs1">
-              ここをクリック
-            </button>
-          </div>
-          <div class="report">
-            <h2>ガチャ報告はこちらから</h2>
-            <img src="/img/image9.jpeg" /><br />
-            <button type="button" v-on:click="moveToBbs2">
-              ここをクリック
-            </button>
-          </div>
-          <div class="questionnaire">
-            <h2>アンケートはこちらから</h2>
-            <img src="/img/image10.jpeg" /><br />
-            <button type="button" v-on:click="moveToQuestionnaire">
-              ここをクリック
-            </button>
-          </div>
-        </nav>
+        <div class="friend">
+          <h5>フレンド募集はこちらから</h5>
+          <img class="img" src="/img/image8.png" /><br />
+          <button type="button" v-on:click="moveToBbs1">ここをクリック</button>
+        </div>
+        <div class="report">
+          <h5>ガチャ報告はこちらから</h5>
+          <img src="/img/image9.jpeg" /><br />
+          <button type="button" v-on:click="moveToBbs2">ここをクリック</button>
+        </div>
+        <div class="questionnaire">
+          <h5>アンケートはこちらから</h5>
+          <img src="/img/image10.jpeg" /><br />
+          <button type="button" v-on:click="moveToQuestionnaire">
+            ここをクリック
+          </button>
+        </div>
       </div>
     </aside>
 
     <article class="article">
       <div class="event">
-        <h2>現在のイベント攻略</h2>
+        <h5>現在のイベント攻略</h5>
         <img src="/img/image5.jpeg" /><br />
         <button type="button" v-on:click="moveToEventCapture">
           ここをクリック
         </button>
       </div>
       <div class="checker">
-        <h2>所持サーヴァントチェッカー</h2>
+        <h5>所持サーヴァントチェッカー</h5>
         <img src="/img/image6.jpeg" /><br />
         <button type="button" v-on:click="moveToCheckPage">
           ここをクリック
         </button>
       </div>
       <div class="calc">
-        <h2>宝具威力計算ツール</h2>
+        <h5>宝具威力計算ツール</h5>
         <img src="/img/image7.jpeg" /><br />
         <button type="button" v-on:click="moveToCalcTreasure">
           ここをクリック
@@ -54,14 +48,14 @@
 
     <div class="sidebar-content">
       <div class="pickup">
-        <h2>2022年シルエットサーヴァント</h2>
+        <h5>2022年シルエットサーヴァント</h5>
         <img class="img" src="/img/silhouette.jpeg" /><br />
         <button type="button" v-on:click="moveTosilhouette">
           ここをクリック
         </button>
       </div>
       <div class="twitter">
-        <h2>公式Twitter</h2>
+        <h5>公式Twitter</h5>
         <Twitter />
       </div>
     </div>
