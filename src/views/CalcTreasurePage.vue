@@ -21,7 +21,8 @@
           </button>
         </div>
       </div>
-      <table border="1" align="center" class="table1">
+
+      <table border="1" align="center" class="table1 centered">
         <tr>
           <th>ATK</th>
           <th>宝具レベル</th>
@@ -30,6 +31,7 @@
           <td>{{ atk }}</td>
           <td>
             <select
+              style="display: block"
               name="servant"
               id="servant"
               v-on:change="calcTreasureLevel"
@@ -44,6 +46,7 @@
           </td>
         </tr>
       </table>
+
       <div class="result">
         <div class="sub">計算結果</div>
         <table border="1" align="center" class="table2">
@@ -177,9 +180,10 @@ export default class XXXComponent extends Vue {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-right: 250px;
-  margin-left: 250px;
+  margin-right: 150px;
+  margin-left: 150px;
 }
+/* 画像 */
 .img1 {
   width: 100px;
   margin-left: 5px;
@@ -190,18 +194,20 @@ export default class XXXComponent extends Vue {
   margin-left: 3px;
   margin-bottom: 0;
 }
+/* テーブル */
 table {
   background-color: white;
 }
 th {
-  padding: 10px;
+  padding-left: 50px;
 }
 td {
-  padding: 10px;
+  padding-left: 50px;
 }
 .table1 {
   margin-top: 20px;
 }
+/* [選択する]のボタン */
 .select {
   margin-bottom: 20px;
   display: inline-block;
