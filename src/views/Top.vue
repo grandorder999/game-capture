@@ -71,6 +71,9 @@ import Twitter from "@/components/Twitter.vue";
   },
 })
 export default class XXXComponent extends Vue {
+  /**
+   * 各画面へ遷移する機能.
+   */
   moveToBbs1(): void {
     this.$router.push("/friendRecruitmenBbs");
   }

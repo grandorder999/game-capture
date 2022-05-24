@@ -115,12 +115,14 @@ export default class XXXComponent extends Vue {
     this.$store.dispatch("getServants");
     this.servantList = this.$store.getters.getServants;
   }
+
   /**
    * フラッグを変更.
    */
   selectServant(): void {
     this.flag = true;
   }
+
   /**
    * サーヴァントを選択する.
    * @param インデックス
@@ -134,6 +136,7 @@ export default class XXXComponent extends Vue {
     this.maxAtk = Math.floor(this.minAtk * 1.22);
     this.initIndex = index;
   }
+
   /**
    * 宝具レベルごとに威力が変わる機能.
    */

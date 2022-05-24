@@ -59,6 +59,9 @@
 import { Component, Vue } from "vue-property-decorator";
 @Component
 export default class XXXComponent extends Vue {
+  /**
+   * 非同期処理.
+   */
   created(): void {
     // スクロールトップボタン
     scrollTop(1); // 遅すぎるとガクガクになるので注意

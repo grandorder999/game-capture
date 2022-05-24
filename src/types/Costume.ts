@@ -1,8 +1,15 @@
+/**
+ * コスチューム（霊衣）を表す部品用のクラス.
+ */
 export class Costume {
   constructor(
+    // id
     private _id: number,
+    // 霊衣の番号
     private _costumeCollectionNo: number,
+    // バトル時のID
     private _battleCharaId: number,
+    // ショートネーム
     private _shortName: string
   ) {}
 

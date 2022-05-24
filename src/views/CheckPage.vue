@@ -41,11 +41,19 @@ import CheckPageButton from "@/components/CheckPageButton.vue";
   },
 })
 export default class XXXComponent extends Vue {
+  // サーヴァント一覧
   private currentServants: Array<Servant> = [];
+  // 所持数
   private possession = 0;
+  // コンプリート率
   private complete = 0;
+  // 桁
   private digit = 1;
 
+  /**
+   * 非同期処理.
+   * @param Promiseオブジェクト
+   */
   async created(): Promise<void> {
     // スクロールトップボタン
     scrollTop(1); // 遅すぎるとガクガクになるので注意
@@ -65,11 +73,13 @@ export default class XXXComponent extends Vue {
         }
       }
     }
-
     await this.$store.dispatch("getServants");
     this.currentServants = this.$store.getters.getServants;
   }
 
+  /**
+   *サーヴァントを選択する.
+   */
   onChange(flag: boolean): void {
     if (flag) {
       this.possession++;
@@ -80,6 +90,9 @@ export default class XXXComponent extends Vue {
     }
   }
 
+  /**
+   * 所持数に合わせたコンプリート率を自動計算する.
+   */
   calcRate(possession: number): void {
     this.complete = (possession / 336) * 100;
   }

@@ -1,18 +1,32 @@
 import { Costume } from "@/types/Costume";
-
+/**
+ * サーヴァントを表す部品用のクラス.
+ */
 export class Servant {
   constructor(
+    // id
     private _id: number,
+    // コレクション番号
     private _collectionNo: number,
+    // サーヴァント名
     private _name: string,
+    // タイプ
     private _type: string,
+    // フラッグ
     private _flag: string,
+    // クラス名
     private _className: string,
+    // 属性
     private _attribute: string,
+    // レア度
     private _rarity: number,
+    // 最大攻撃威力
     private _atkMax: number,
+    // 最大HP
     private _hpMax: number,
+    // 画像URL
     private _face: string,
+    // 霊衣
     private _costume: Array<Costume>
   ) {}
 

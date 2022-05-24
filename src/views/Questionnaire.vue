@@ -261,6 +261,9 @@ export default class XXXComponent extends Vue {
   private like = "";
   private agree = false;
 
+  /**
+   * 非同期処理.
+   */
   created(): void {
     // スクロールトップボタン
     scrollTop(1); // 遅すぎるとガクガクになるので注意
@@ -281,8 +284,9 @@ export default class XXXComponent extends Vue {
       }
     }
   }
+
   /**
-   * アンケート内容を送信する
+   * アンケート内容を送信する.
    */
   submit(): void {
     console.log("発生");

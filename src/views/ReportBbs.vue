@@ -21,14 +21,16 @@
         v-model="articleContent"
       ></textarea>
     </div>
+
     <div class="upload">
       <div>
-        <input type="file" ref="preview" v-on:change="show" />
+        <input type="file" ref="preview" v-on:change="showImage" />
       </div>
       <div class="preview-box" v-if="url">
         <img class="image-preview" v-bind:src="url" />
       </div>
     </div>
+
     <button class="post-button" type="button" v-on:click="addArticle">
       記事投稿</button
     ><br />
@@ -70,12 +72,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { Article } from "@/types/article";
-import Upload from "@/components/Upload.vue";
-@Component({
-  components: {
-    Upload,
-  },
-})
+@Component
 export default class XXXComponent extends Vue {
   private url = "";
   // 投稿者名
@@ -89,6 +86,9 @@ export default class XXXComponent extends Vue {
   // 現在の投稿一覧
   private currentArticleList = new Array<Article>();
 
+  /**
+   * 非同期処理.
+   */
   created(): void {
     // スクロールトップボタン
     scrollTop(1); // 遅すぎるとガクガクになるので注意
@@ -113,7 +113,10 @@ export default class XXXComponent extends Vue {
     console.log(this.currentArticleList);
   }
 
-  show(): void {
+  /**
+   * 選択した画像のプレビュー表示を行う.
+   */
+  showImage(): void {
     const file = this.$refs.preview.files[0];
     this.url = URL.createObjectURL(file);
   }
