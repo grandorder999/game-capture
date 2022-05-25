@@ -10,6 +10,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   strict: true,
   state: {
+    // 投稿１
     articles: [
       new Article(
         1,
@@ -19,6 +20,7 @@ export default new Vuex.Store({
         "/img/image4.png"
       ),
     ],
+    // 投稿２
     articles2: [
       new Article(
         1,
@@ -28,9 +30,11 @@ export default new Vuex.Store({
         "/img/image3.png"
       ),
     ],
+    // サーヴァント一覧
     servants: Array<Servant>(),
   },
   actions: {
+    // APIからデータを取得する
     async getServants(context) {
       const responce = await axios.get(
         "https://api.atlasacademy.io/export/JP/basic_servant.json"
@@ -41,6 +45,7 @@ export default new Vuex.Store({
     },
   },
   mutations: {
+    // サーヴァントを表示する
     showServants(state, payload) {
       state.servants = new Array<Servant>();
       for (const servant of payload) {
@@ -62,15 +67,21 @@ export default new Vuex.Store({
         );
       }
     },
+    // 投稿する（フレンド募集掲示板）
     addArticle(state, payload) {
       state.articles.unshift(payload.article);
     },
+    // 投稿する（ガチャ報告掲示板）
     addArticle1(state, payload) {
       state.articles2.unshift(payload.article);
     },
-
-    deleteArticle(state, payload) {
+    // 投稿を削除する（フレンド募集掲示板）
+    deleteArticle1(state, payload) {
       state.articles.splice(payload.index, 1);
+    },
+    // 投稿を削除する（ガチャ報告掲示板）
+    deleteArticle2(state, payload) {
+      state.articles2.splice(payload.index, 1);
     },
   },
   modules: {},
